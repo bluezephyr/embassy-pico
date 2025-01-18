@@ -31,11 +31,11 @@ async fn main(spawner: Spawner) {
 async fn button_task(mut button: Input<'static>) {
     let mut count: u32 = 0;
     loop {
-        button.wait_for_high().await;
         button.wait_for_low().await;
         count += 1;
         CHANNEL.send(count).await;
-        embassy_time::Timer::after(Duration::from_millis(100)).await;
+        embassy_time::Timer::after(Duration::from_millis(200)).await;
+        button.wait_for_high().await;
     }
 }
 
