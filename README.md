@@ -20,6 +20,13 @@ display is connected to GP17 (SCL) and GP16 (SDA). The handling of the display
 is done using a third embassy task. When the button is pressed, the `count`
 variable is sent also to the display task and the value is printed.
 
+## Build and Download
+
+Build the software using `cargo embed`. This command will build and download the binary to
+the target using the Raspberry Debug Probe. See the picture below for how to connect.
+
+![Board with Debug Probe](docs/board.jpg)
+
 ## Links
 
 * [Embassy](https://embassy.dev/)
